@@ -1,0 +1,34 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.chowchow.app.fragments.HistoryFragment">
+
+    <RelativeLayout
+        android:background="@color/theme"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize">
+
+        <ImageButton
+            android:id="@+id/fragment_history_left_nav_button"
+            android:layout_height="33.5dp"
+            android:layout_width="33.5dp"
+            style="@style/left_nav_button"
+            android:background="@drawable/select_friends"
+            />
+
+        <TextView
+            android:id="@+id/fragment_history_navbar_title"
+            style="@style/navbar_title"
+            android:text="@string/history_navbar_title"
+            />
+
+        <ImageButton
+            android:id="@+id/fragment_history_right_nav_button"
+            android:layout_width="32.5dp"
+            android:layout_height="33.5dp"
+            style="@style/right_nav_button"
+            android:background="@drawable/settings"
+            />
+
+    </RelativeLayout>
+
+</FrameLayout>

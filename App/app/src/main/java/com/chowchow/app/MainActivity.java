@@ -1,37 +1,74 @@
 package com.chowchow.app;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 
-public class MainActivity extends AppCompatActivity {
+import com.chowchow.app.adapters.MainPagerAdapter;
+import com.chowchow.app.fragments.HistoryFragment;
+import com.chowchow.app.fragments.SelectFriendsFragment;
+import com.chowchow.app.fragments.SettingsFragment;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+public class MainActivity extends BaseActivity {
+
+    private static final String TAG = "MainActivity";
+
+    public enum MainFragment {
+        SELECT_FRIENDS,
+        HISTORY,
+        SETTINGS
+    }
+
+    @Bind(R.id.activity_main_view_pager)
+    ViewPager viewPager;
+
+    FragmentManager fragmentManager;
+    MainPagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        ButterKnife.bind(this);
+        setupViewPager();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    private void setupViewPager() {
+        fragmentManager = getSupportFragmentManager();
+        pagerAdapter = new MainPagerAdapter(fragmentManager);
+
+        SelectFriendsFragment selectFriendsFragment = new SelectFriendsFragment();
+        pagerAdapter.addFragment(selectFriendsFragment);
+        HistoryFragment historyFragment = new HistoryFragment();
+        pagerAdapter.addFragment(historyFragment);
+        SettingsFragment settingsFragment = new SettingsFragment();
+        pagerAdapter.addFragment(settingsFragment);
+
+
+        viewPager.setAdapter(pagerAdapter);
+
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public void navigateToFragment(MainFragment fragment) {
+        if (fragment.equals(MainFragment.SELECT_FRIENDS)) {
+            Log.d(TAG, "navigateToFragment(), navigating to fragment == SELECT_FRIENDS");
+            viewPager.setCurrentItem(0);
+        } else if (fragment.equals(MainFragment.HISTORY)) {
+            Log.d(TAG, "navigateToFragment(), navigating to fragment == HISTORY");
+            viewPager.setCurrentItem(1);
+        } else if (fragment.equals(MainFragment.SETTINGS)) {
+            Log.d(TAG, "navigateToFragment(), navigating to fragment == SETTINGS");
+            viewPager.setCurrentItem(2);
         }
+    }
 
-        return super.onOptionsItemSelected(item);
+    public static String getTAG() {
+        return TAG;
     }
 }

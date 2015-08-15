@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">App</string>
+    <string name="app_name">ChowChow</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <!-- Navbar -->
+    <string name="select_friends_navbar_title">Select Friends</string>
+    <string name="history_navbar_title">History</string>
+    <string name="settings_navbar_title">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

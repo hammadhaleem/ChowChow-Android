@@ -3,6 +3,32 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 
+
+    <!-- Nav bar elements -->
+    <style name="left_nav_button">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <style name="navbar_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/navbar_title</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="right_nav_button">
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
 </resources>

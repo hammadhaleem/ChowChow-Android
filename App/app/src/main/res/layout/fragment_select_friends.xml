@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chowchow.app.fragments.SelectFriendsFragment">
+
+    <RelativeLayout
+        android:background="@color/theme"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/fragment_select_friends_navbar_title"
+            style="@style/navbar_title"
+            android:text="@string/select_friends_navbar_title"
+            />
+
+        <ImageButton
+            android:id="@+id/fragment_select_friends_right_nav_button"
+            android:layout_width="39dp"
+            android:layout_height="33.5dp"
+            style="@style/right_nav_button"
+            android:background="@drawable/history"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
