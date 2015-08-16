@@ -3,5 +3,11 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <!-- Navbar related -->
     <dimen name="navbar_title">24dp</dimen>
+
+    <!-- Listview related -->
+    <dimen name="divider_height">0.5dp</dimen>
+
 </resources>
+

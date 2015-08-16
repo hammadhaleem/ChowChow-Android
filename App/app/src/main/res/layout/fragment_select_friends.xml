@@ -3,7 +3,9 @@
     android:layout_height="match_parent"
     tools:context="com.chowchow.app.fragments.SelectFriendsFragment">
 
+    <!-- Navbar -->
     <RelativeLayout
+        android:id="@+id/fragment_select_friends_navbar_container"
         android:background="@color/theme"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize">
@@ -23,5 +25,16 @@
             />
 
     </RelativeLayout>
+
+    <!--<ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@color/black"
+        android:dividerHeight="0.5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/fragment_select_friends_navbar_container"
+        android:overScrollFooter="@android:color/transparent"
+        android:footerDividersEnabled="false"
+        />-->
 
 </RelativeLayout>

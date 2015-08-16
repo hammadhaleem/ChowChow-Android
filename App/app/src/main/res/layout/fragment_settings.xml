@@ -3,6 +3,7 @@
     android:layout_height="match_parent"
     tools:context="com.chowchow.app.fragments.SettingsFragment">
 
+    <!-- Navbar -->
     <RelativeLayout
         android:background="@color/theme"
         android:layout_width="match_parent"
