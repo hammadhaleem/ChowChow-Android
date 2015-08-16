@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.chowchow.app.MainActivity;
 import com.chowchow.app.R;
+import com.chowchow.app.utils.Constants;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -41,7 +42,7 @@ public class SettingsFragment extends BaseFragment {
     @OnClick(R.id.fragment_settings_right_nav_button)
     void onRightNavButtonPressed() {
         Log.d(TAG, "onRightNavButtonPressed()");
-        ((MainActivity) getActivity()).navigateToFragment(MainActivity.MainFragment.HISTORY);
+        ((MainActivity) getActivity()).navigateToFragment(Constants.MainFragment.HISTORY);
     }
 
 

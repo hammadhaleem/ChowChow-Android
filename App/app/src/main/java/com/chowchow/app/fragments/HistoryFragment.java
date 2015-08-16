@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.chowchow.app.MainActivity;
 import com.chowchow.app.R;
+import com.chowchow.app.utils.Constants;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -40,13 +41,13 @@ public class HistoryFragment extends BaseFragment {
     @OnClick(R.id.fragment_history_left_nav_button)
     void onLeftNavButtonPressed() {
         Log.d(TAG, "onLeftNavButtonPressed()");
-        ((MainActivity) getActivity()).navigateToFragment(MainActivity.MainFragment.SELECT_FRIENDS);
+        ((MainActivity) getActivity()).navigateToFragment(Constants.MainFragment.SELECT_FRIENDS);
     }
 
     @OnClick(R.id.fragment_history_right_nav_button)
     void onRightNavButtonPressed() {
         Log.d(TAG, "onRightNavButtonPressed()");
-        ((MainActivity) getActivity()).navigateToFragment(MainActivity.MainFragment.SETTINGS);
+        ((MainActivity) getActivity()).navigateToFragment(Constants.MainFragment.SETTINGS);
     }
 
 

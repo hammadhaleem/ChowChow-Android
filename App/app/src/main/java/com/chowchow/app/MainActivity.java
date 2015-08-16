@@ -9,6 +9,7 @@ import com.chowchow.app.adapters.MainPagerAdapter;
 import com.chowchow.app.fragments.HistoryFragment;
 import com.chowchow.app.fragments.SelectFriendsFragment;
 import com.chowchow.app.fragments.SettingsFragment;
+import com.chowchow.app.utils.Constants;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -16,12 +17,6 @@ import butterknife.ButterKnife;
 public class MainActivity extends BaseActivity {
 
     private static final String TAG = "MainActivity";
-
-    public enum MainFragment {
-        SELECT_FRIENDS,
-        HISTORY,
-        SETTINGS
-    }
 
     @Bind(R.id.activity_main_view_pager)
     ViewPager viewPager;
@@ -55,17 +50,9 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    public void navigateToFragment(MainFragment fragment) {
-        if (fragment.equals(MainFragment.SELECT_FRIENDS)) {
-            Log.d(TAG, "navigateToFragment(), navigating to fragment == SELECT_FRIENDS");
-            viewPager.setCurrentItem(0);
-        } else if (fragment.equals(MainFragment.HISTORY)) {
-            Log.d(TAG, "navigateToFragment(), navigating to fragment == HISTORY");
-            viewPager.setCurrentItem(1);
-        } else if (fragment.equals(MainFragment.SETTINGS)) {
-            Log.d(TAG, "navigateToFragment(), navigating to fragment == SETTINGS");
-            viewPager.setCurrentItem(2);
-        }
+    public void navigateToFragment(Constants.MainFragment fragment) {
+        Log.d(TAG, "navigateToFragment(), navigating to fragment == " + fragment.toString());
+        viewPager.setCurrentItem(fragment.getValue());
     }
 
     public static String getTAG() {
