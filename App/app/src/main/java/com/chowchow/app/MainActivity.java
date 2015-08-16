@@ -31,10 +31,10 @@ public class MainActivity extends BaseActivity {
 
 
         ButterKnife.bind(this);
-        setupViewPager();
+        initViewPager();
     }
 
-    private void setupViewPager() {
+    private void initViewPager() {
         fragmentManager = getSupportFragmentManager();
         pagerAdapter = new MainPagerAdapter(fragmentManager);
 

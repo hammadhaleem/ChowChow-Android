@@ -10,7 +10,7 @@
 
     <!-- Nav bar elements -->
     <style name="left_nav_button">
-        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginLeft">@dimen/navbar_horizontal_margin</item>
         <item name="android:layout_alignParentLeft">true</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:backgroundTint">@color/white</item>
@@ -26,7 +26,7 @@
     </style>
 
     <style name="right_nav_button">
-        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginRight">@dimen/navbar_horizontal_margin</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:backgroundTint">@color/white</item>

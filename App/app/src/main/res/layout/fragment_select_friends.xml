@@ -26,15 +26,19 @@
 
     </RelativeLayout>
 
-    <!--<ListView
+    <ListView
+        android:id="@+id/fragment_select_friends_list_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:divider="@color/black"
-        android:dividerHeight="0.5dp"
+        android:dividerHeight="@dimen/divider_height"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/fragment_select_friends_navbar_container"
         android:overScrollFooter="@android:color/transparent"
         android:footerDividersEnabled="false"
-        />-->
+        android:cacheColorHint="@android:color/transparent"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        />
 
 </RelativeLayout>

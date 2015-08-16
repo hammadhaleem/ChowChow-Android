@@ -5,9 +5,16 @@
 
     <!-- Navbar related -->
     <dimen name="navbar_title">24dp</dimen>
+    <dimen name="navbar_horizontal_margin">10dp</dimen>
 
-    <!-- Listview related -->
+    <!-- General listview related -->
     <dimen name="divider_height">0.5dp</dimen>
+
+    <!-- Select friends list row related -->
+    <dimen name="list_select_friends_row_name_text_size">18dp</dimen>
+    <dimen name="list_select_friends_row_distance_text_size">14dp</dimen>
+    <dimen name="list_select_friends_row_horizontal_margin">30dp</dimen>
+    <dimen name="list_select_friends_row_vertical_margin">30dp</dimen>
 
 </resources>
 
