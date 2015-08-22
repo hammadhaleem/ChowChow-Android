@@ -13,7 +13,7 @@ import com.chowchow.app.fragments.SettingsFragment;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-//test
+//test2
 
 public class MainActivity extends BaseActivity {
 
