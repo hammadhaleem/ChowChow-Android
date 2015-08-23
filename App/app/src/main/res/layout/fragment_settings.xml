@@ -11,8 +11,8 @@
 
         <ImageButton
             android:id="@+id/fragment_settings_right_nav_button"
-            android:layout_width="39dp"
-            android:layout_height="33.5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             style="@style/left_nav_button"
             android:background="@drawable/history"
             />

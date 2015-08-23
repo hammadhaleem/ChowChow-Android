@@ -10,8 +10,8 @@
 
         <ImageButton
             android:id="@+id/fragment_history_left_nav_button"
-            android:layout_height="33.5dp"
-            android:layout_width="33.5dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             style="@style/left_nav_button"
             android:background="@drawable/select_friends"
             />
@@ -24,8 +24,8 @@
 
         <ImageButton
             android:id="@+id/fragment_history_right_nav_button"
-            android:layout_width="32.5dp"
-            android:layout_height="33.5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             style="@style/right_nav_button"
             android:background="@drawable/settings"
             />

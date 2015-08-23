@@ -18,8 +18,8 @@
 
         <ImageButton
             android:id="@+id/fragment_select_friends_right_nav_button"
-            android:layout_width="39dp"
-            android:layout_height="33.5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             style="@style/right_nav_button"
             android:background="@drawable/history"
             />
@@ -39,6 +39,12 @@
         android:cacheColorHint="@android:color/transparent"
         android:scrollbars="none"
         android:overScrollMode="never"
+        />
+
+    <include
+        android:id="@+id/fragment_select_friends_action_bar"
+        android:visibility="gone"
+        layout="@layout/action_bar"
         />
 
 </RelativeLayout>
