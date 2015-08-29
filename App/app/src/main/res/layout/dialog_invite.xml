@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="12311"
+        android:textSize="22sp"/>
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/iv_u_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            android:src="@drawable/icon"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_invite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="abc"
+                android:layout_margin="5dp"
+                android:layout_centerHorizontal="true"/>
+            <LinearLayout
+                android:id="@+id/ll_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal"
+                android:layout_below="@+id/tv_invite"
+                android:layout_centerHorizontal="true">
+                <ImageView
+                    android:id="@+id/iv_ok"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+
+                    android:layout_margin="5dp"
+
+                    android:src="@drawable/ic_tick_1"/>
+                <ImageView
+                    android:id="@+id/iv_no"
+                    android:layout_toRightOf="@+id/iv_ok"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_cross_2"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_eaten"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/ll_t"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_eaten_2"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
