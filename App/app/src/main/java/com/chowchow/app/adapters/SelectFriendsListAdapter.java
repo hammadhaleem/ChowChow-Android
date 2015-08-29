@@ -120,7 +120,6 @@ public class SelectFriendsListAdapter extends BaseAdapter {
                 Log.d(TAG, "friend " + position + " is selected");
                 friendsMap.put(friend, true); // mapping selected for ltgray UI
                 selectedFriendsList.add(friend); // adding to selected friends list to send
-
             } else {
                 Log.d(TAG, "friend " + position + " is unselected");
                 friendsMap.put(friend, false); // mapping unselected for transparent UI
@@ -130,11 +129,20 @@ public class SelectFriendsListAdapter extends BaseAdapter {
             notifyDataSetChanged();
 
             // check whether need to pop up action bar or not
-            boolean isActionBarTriggered = ((SelectFriendsFragment) parentFragment).isActionBarTriggered();
+            boolean isActionBarTriggered = ((SelectFriendsFragment) parentFragment).getActionBar().isTriggered();
             if (!selectedFriendsList.isEmpty() && !isActionBarTriggered) {
-                ((SelectFriendsFragment) parentFragment).triggerActionBar(true);
+                ((SelectFriendsFragment) parentFragment).getActionBar().trigger(true);
             } else if (selectedFriendsList.isEmpty() && isActionBarTriggered) {
-                ((SelectFriendsFragment) parentFragment).triggerActionBar(false);
+                ((SelectFriendsFragment) parentFragment).getActionBar().trigger(false);
+            }
+
+            // update "x friends selected" text in action bar
+            if (selectedFriendsList.size() == 1) {
+                String text = parentFragment.getResources().getString(R.string.action_bar_select_friends_single);
+                ((SelectFriendsFragment) parentFragment).getActionBar().setItemsSelected(text);
+            } else {
+                String text = String.format(parentFragment.getResources().getString(R.string.action_bar_select_friends_multi), selectedFriendsList.size());
+                ((SelectFriendsFragment) parentFragment).getActionBar().setItemsSelected(text);
             }
         }
     };

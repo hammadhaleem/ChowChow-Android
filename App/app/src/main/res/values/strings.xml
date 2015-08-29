@@ -6,7 +6,8 @@
     <string name="history_navbar_title">History</string>
     <string name="settings_navbar_title">Settings</string>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Action bar -->
+    <string name="action_bar_select_friends_multi" formatted="false">%s friends selected</string>
+    <string name="action_bar_select_friends_single">1 friend selected</string>
 
 </resources>

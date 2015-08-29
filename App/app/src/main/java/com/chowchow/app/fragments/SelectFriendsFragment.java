@@ -8,16 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 
 import com.chowchow.app.MainActivity;
 import com.chowchow.app.R;
 import com.chowchow.app.adapters.SelectFriendsListAdapter;
+import com.chowchow.app.components.ActionBar;
 import com.chowchow.app.models.Friend;
 import com.chowchow.app.utils.Constants;
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
-import com.nineoldandroids.animation.Animator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +38,7 @@ public class SelectFriendsFragment extends BaseFragment {
     ListView listView;
 
     @Bind(R.id.fragment_select_friends_action_bar)
-    RelativeLayout actionBar;
+    ActionBar actionBar;
 
     boolean isActionBarTriggered;
 
@@ -88,62 +85,7 @@ public class SelectFriendsFragment extends BaseFragment {
         ((MainActivity) getActivity()).navigateToFragment(Constants.MainFragment.HISTORY);
     }
 
-    public void triggerActionBar(boolean triggered){
-        isActionBarTriggered = triggered;
-        if (isActionBarTriggered) {
-            YoYo.with(Techniques.SlideInUp)
-                    .withListener(new Animator.AnimatorListener() {
-                        @Override
-                        public void onAnimationStart(Animator animation) {
-                            actionBar.setVisibility(View.VISIBLE);
-                        }
-
-                        @Override
-                        public void onAnimationEnd(Animator animation) {
-
-                        }
-
-                        @Override
-                        public void onAnimationCancel(Animator animation) {
-
-                        }
-
-                        @Override
-                        public void onAnimationRepeat(Animator animation) {
-
-                        }
-                    })
-                    .duration(300)
-                    .playOn(actionBar);
-        } else {
-            YoYo.with(Techniques.SlideOutDown)
-                    .duration(300)
-                    .withListener(new Animator.AnimatorListener() {
-                        @Override
-                        public void onAnimationStart(Animator animation) {
-
-                        }
-
-                        @Override
-                        public void onAnimationEnd(Animator animation) {
-                            actionBar.setVisibility(View.GONE);
-                        }
-
-                        @Override
-                        public void onAnimationCancel(Animator animation) {
-
-                        }
-
-                        @Override
-                        public void onAnimationRepeat(Animator animation) {
-
-                        }
-                    })
-                    .playOn(actionBar);
-        }
-    }
-
-    public boolean isActionBarTriggered() {
-        return isActionBarTriggered;
+    public ActionBar getActionBar() {
+        return actionBar;
     }
 }

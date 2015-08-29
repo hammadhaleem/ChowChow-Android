@@ -41,10 +41,17 @@
         android:overScrollMode="never"
         />
 
-    <include
+<!--    <include
         android:id="@+id/fragment_select_friends_action_bar"
         android:visibility="gone"
         layout="@layout/action_bar"
-        />
+        />-->
+
+    <com.chowchow.app.components.ActionBar
+        android:id="@+id/fragment_select_friends_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
 
 </RelativeLayout>
