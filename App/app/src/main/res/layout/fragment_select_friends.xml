@@ -4,6 +4,7 @@
     tools:context="com.chowchow.app.fragments.SelectFriendsFragment">
 
     <RelativeLayout
+        android:id="@+id/rl_navigation_bar"
         android:background="@color/theme"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize">
@@ -23,5 +24,10 @@
             />
 
     </RelativeLayout>
+    <Button
+        android:id="@+id/btn_send_gcm_test"
+        android:layout_below="@+id/rl_navigation_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>
