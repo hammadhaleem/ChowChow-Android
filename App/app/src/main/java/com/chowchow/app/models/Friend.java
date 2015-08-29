@@ -29,6 +29,10 @@ public class Friend {
             return this;
         }
 
+        public Friend build() {
+            return new Friend(this); 
+        }
+
 
     }
 

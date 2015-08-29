@@ -78,7 +78,11 @@ public class SelectFriendsFragment extends BaseFragment {
 //            builder.setName("Friend " + i);
 //            builder.setDistance(i * 100);
 //            Friend friend = new Friend(builder);
-            Friend friend = new Friend(new Friend.Builder(String.valueOf(i)).setName("e").setDistance(1));
+
+            Friend friend = new Friend.Builder(String.valueOf(i))
+                    .setName("Friend " + i)
+                    .setDistance(i * 100)
+                    .build();
             friends.add(friend);
         }
     }
