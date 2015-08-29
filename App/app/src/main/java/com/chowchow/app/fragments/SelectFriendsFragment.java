@@ -9,12 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.chowchow.app.GCM_.logic.InstanceIdHelper;
 import com.chowchow.app.MainActivity;
 import com.chowchow.app.R;
 import com.chowchow.app.adapters.SelectFriendsListAdapter;
 import com.chowchow.app.components.ActionBar;
 import com.chowchow.app.models.Friend;
 import com.chowchow.app.utils.Constants;
+import com.chowchow.app.utils.GcmManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +33,7 @@ public class SelectFriendsFragment extends BaseFragment {
     private static final String TAG = "SelectFriendsFragment";
 
     View view;
+    private InstanceIdHelper mInstanceIdHelper;
     private List<Friend> friends;
     private SelectFriendsListAdapter adapter;
 
@@ -53,6 +56,7 @@ public class SelectFriendsFragment extends BaseFragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_select_friends, container, false);
         ButterKnife.bind(this, view);
+        GcmManager.getInstance(this.getActivity().getApplicationContext()).getGcmTokenInBackground();
 
         initListView();
         isActionBarTriggered = false;
@@ -84,6 +88,16 @@ public class SelectFriendsFragment extends BaseFragment {
         Log.d(TAG, "onRightNavButtonPressed()");
         ((MainActivity) getActivity()).navigateToFragment(Constants.MainFragment.HISTORY);
     }
+
+    @OnClick(R.id.btn_send_gcm_test)
+    void OnTest(){
+        GcmManager.getInstance(this.getActivity().getApplicationContext()).doGcmSend(
+            GcmManager.getInstance(this.getActivity().getApplicationContext()).getToken()
+        );
+    }
+
+
+
 
     public ActionBar getActionBar() {
         return actionBar;
