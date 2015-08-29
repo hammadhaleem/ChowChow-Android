@@ -74,7 +74,7 @@ public class GcmManager extends ManagerBase{
 			messageBuilder.notificationClickAction(clickAction);
 		}
 
-		String sound = "sound";
+		String sound = "default";
 		if (!TextUtils.isEmpty(sound)) {
 			messageBuilder.notificationSound(sound);
 		}
