@@ -43,8 +43,6 @@ public class SelectFriendsFragment extends BaseFragment {
     @Bind(R.id.fragment_select_friends_action_bar)
     ActionBar actionBar;
 
-    boolean isActionBarTriggered;
-
     public SelectFriendsFragment() {
         // Required empty public constructor
     }
@@ -59,10 +57,11 @@ public class SelectFriendsFragment extends BaseFragment {
         GcmManager.getInstance(this.getActivity().getApplicationContext()).getGcmTokenInBackground();
 
         initListView();
-        isActionBarTriggered = false;
 
         return view;
     }
+
+
 
     private void initListView() {
         initMockFriends();

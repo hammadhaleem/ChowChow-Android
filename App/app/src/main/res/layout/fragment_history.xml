@@ -1,9 +1,10 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="com.chowchow.app.fragments.HistoryFragment">
 
     <!-- Navbar -->
     <RelativeLayout
+        android:id="@+id/fragment_history_navbar_container"
         android:background="@color/theme"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize">
@@ -32,4 +33,19 @@
 
     </RelativeLayout>
 
-</FrameLayout>
+    <ListView
+        android:id="@+id/fragment_history_list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@color/black"
+        android:dividerHeight="@dimen/divider_height"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/fragment_history_navbar_container"
+        android:overScrollFooter="@android:color/transparent"
+        android:footerDividersEnabled="false"
+        android:cacheColorHint="@android:color/transparent"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        />
+
+</RelativeLayout>

@@ -46,7 +46,6 @@ public class ActionBar extends RelativeLayout {
         init(context);
     }
 
-
     public ActionBar(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
@@ -141,8 +140,11 @@ public class ActionBar extends RelativeLayout {
     }
 
     @OnClick(R.id.action_bar_send)
-    void onSendButtonPressed(){
-        Log.d(TAG, "onSendButtonPressed");
+    void onSendButtonPressed() {
+        Log.d(TAG, "onSendButtonPressed()");
+
+        // clean up
+        trigger(false);
     }
 
 

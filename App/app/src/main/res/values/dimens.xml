@@ -11,10 +11,16 @@
     <dimen name="divider_height">0.5dp</dimen>
 
     <!-- Select friends list row related -->
-    <dimen name="list_select_friends_row_name_text_size">16dp</dimen>
-    <dimen name="list_select_friends_row_distance_text_size">14dp</dimen>
+    <dimen name="list_select_friends_row_name_text_size">24dp</dimen>
+    <dimen name="list_select_friends_row_distance_text_size">22dp</dimen>
     <dimen name="list_select_friends_row_horizontal_margin">22dp</dimen>
     <dimen name="list_select_friends_row_vertical_margin">22dp</dimen>
+    <dimen name="list_select_friends_row_element_margin">4dp</dimen>
+
+    <!-- History list row related -->
+    <dimen name="list_history_row_location_name_text_size">18dp</dimen>
+    <dimen name="list_history_row_users_names_text_size">16dp</dimen>
+    <dimen name="list_History_row_created_date_text_size">14dp</dimen>
 
 </resources>
 

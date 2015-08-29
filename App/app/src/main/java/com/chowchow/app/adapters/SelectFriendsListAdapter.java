@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -38,6 +39,9 @@ public class SelectFriendsListAdapter extends BaseAdapter {
 
         @Bind(R.id.list_select_friends_row_distance)
         TextView friendDistance;
+
+        @Bind(R.id.list_select_friends_row_selected_tick)
+        ImageView selectedTick;
 
         public SelectFriendsListAdapterViewHolder(View view) {
             ButterKnife.bind(this, view);
@@ -103,8 +107,12 @@ public class SelectFriendsListAdapter extends BaseAdapter {
         boolean isSelected = this.friendsMap.get(friend);
         if (isSelected) {
             convertView.setBackgroundColor(Color.LTGRAY);
+            viewHolder.friendDistance.setVisibility(View.GONE);
+            viewHolder.selectedTick.setVisibility(View.VISIBLE);
         } else {
             convertView.setBackgroundColor(Color.TRANSPARENT);
+            viewHolder.friendDistance.setVisibility(View.VISIBLE);
+            viewHolder.selectedTick.setVisibility(View.GONE);
         }
 
         return convertView;
@@ -140,12 +148,24 @@ public class SelectFriendsListAdapter extends BaseAdapter {
             if (selectedFriendsList.size() == 1) {
                 String text = parentFragment.getResources().getString(R.string.action_bar_select_friends_single);
                 ((SelectFriendsFragment) parentFragment).getActionBar().setItemsSelected(text);
-            } else {
+            } else if (selectedFriendsList.size() > 1) {
                 String text = String.format(parentFragment.getResources().getString(R.string.action_bar_select_friends_multi), selectedFriendsList.size());
                 ((SelectFriendsFragment) parentFragment).getActionBar().setItemsSelected(text);
             }
         }
     };
+
+    // clean up after sending request
+    public void clearAllSelectedFriends() {
+        for (Friend friend : selectedFriendsList) {
+            friendsMap.put(friend, false);
+        }
+
+        selectedFriendsList.clear();
+        Log.d(TAG, "clearAllSelectedFriends(), is selectedFriendsList empty? " + selectedFriendsList.isEmpty());
+
+        notifyDataSetChanged();
+    }
 
     public static String getTAG() {
         return TAG;

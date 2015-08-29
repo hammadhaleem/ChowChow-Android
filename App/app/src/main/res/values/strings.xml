@@ -243,5 +243,9 @@
     <string name="group_alert_group_will_be_deleted">Removing all the members will delete the group itself</string>
     <string name="group_alert_cancel">Cancel</string>
     <string name="group_alert_delete_group">Delete the group</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
     <!--del-->
 </resources>
