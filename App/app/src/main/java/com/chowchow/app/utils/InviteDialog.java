@@ -30,10 +30,11 @@ public class InviteDialog extends Dialog implements View.OnClickListener{
 	@Bind(R.id.iv_no) ImageView cross;
 	@Bind(R.id.iv_eaten) ImageView eaten;
 	String room_id;
-	public InviteDialog(Context context, String room_id){
+	public InviteDialog(Context context, String room_id, String u_name){
 		super(context);
 		ButterKnife.bind(context, this);
 		setContentView(R.layout.dialog_invite);
+		setName(u_name);
 	}
 
 	public void setName(String inviter){

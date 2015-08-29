@@ -60,9 +60,8 @@ public class MainActivity extends BaseActivity {
             Log.v("test",room_id);
 
             if (room_id.compareTo("0")!=0) {
-                InviteDialog t = new InviteDialog(this,room_id);
+                InviteDialog t = new InviteDialog(this,room_id,"hihi");
                 t.show();
-                t.setName("hihi");
             }
         }
     }

@@ -74,10 +74,11 @@ public class SelectFriendsFragment extends BaseFragment {
     private void initMockFriends() {
         friends = new ArrayList<>();
         for (int i = 1; i < 11; i++) {
-            Friend.Builder builder = new Friend.Builder(String.valueOf(i));
-            builder.setName("Friend " + i);
-            builder.setDistance(i * 100);
-            Friend friend = new Friend(builder);
+//            Friend.Builder builder = new Friend.Builder(String.valueOf(i));
+//            builder.setName("Friend " + i);
+//            builder.setDistance(i * 100);
+//            Friend friend = new Friend(builder);
+            Friend friend = new Friend(new Friend.Builder(String.valueOf(i)).setName("e").setDistance(1));
             friends.add(friend);
         }
     }
@@ -89,12 +90,12 @@ public class SelectFriendsFragment extends BaseFragment {
         ((MainActivity) getActivity()).navigateToFragment(Constants.MainFragment.HISTORY);
     }
 
-    @OnClick(R.id.btn_send_gcm_test)
+    /*@OnClick(R.id.btn_send_gcm_test)
     void OnTest(){
         GcmManager.getInstance(this.getActivity().getApplicationContext()).doGcmSend(
             GcmManager.getInstance(this.getActivity().getApplicationContext()).getToken()
         );
-    }
+    }*/
 
 
 
